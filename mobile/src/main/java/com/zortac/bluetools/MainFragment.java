@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class VDeviceListFragment extends Fragment {
+public class MainFragment extends Fragment {
 
-    public VDeviceListFragment() {
+    public MainFragment() {
     }
 
     @Override
@@ -37,7 +37,7 @@ public class VDeviceListFragment extends Fragment {
                         R.id.list_item_test_textview,
                         testList);
 
-        View rootView = inflater.inflate(R.layout.fragment_vdevicelist, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         ListView testListView = (ListView) rootView.findViewById(R.id.listview_testlist);
         testListView.setAdapter(testlistAdapter);
