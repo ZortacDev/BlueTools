@@ -8,3 +8,6 @@ We hope to be able to port this app to iOS, once the Android version is finished
 We hopefully will be able to port this application to PC, Mac and Linux once the mobile versions are finished. Right now our focus lies solely on the mobile versions(especially the Android version).
 # Extemely early pre-Alpha warning
 This Application is currently in a pre-Alpha state and may not do anything if you decide to compile the source and install it on your Android device. It may aswell break your device completely. We are not responsible for anything you do with our code.
+
+
+test
