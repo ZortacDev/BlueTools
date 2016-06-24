@@ -70,7 +70,7 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
         } else {
             activateButton.setText(R.string.activate_vdevice);
             activateButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(),
-                    R.color.md_red_500)));
+                    R.color.md_green_500)));
         }
 
     }
