@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHolder> {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView nameTextView;
         public Button activateButton;
@@ -27,7 +28,20 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
             nameTextView = (TextView) itemView.findViewById(R.id.vdevice_name);
             activateButton = (Button) itemView.findViewById(R.id.activate_button);
             configureButton = (Button) itemView.findViewById(R.id.configure_button);
+            activateButton.setOnClickListener(this);
+            configureButton.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == activateButton.getId()){
+                int vDeviceId = getAdapterPosition();
+                //insert OnClick event for activateButton here
+            } else if (v.getId() == configureButton.getId()) {
+                int vDeviceId = getAdapterPosition();
+                //insert OnClick event for configureButton here
+            }
         }
 
     }
