@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addFabClicked(View v) {
         String[] members = {"", ""};
-        vdevices.add(new VDeviceInfo("Device", true, members));
+        vdevices.add(new VDeviceInfo("Device", new Random().nextBoolean(), members));
         RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
 
         assert rvVDeviceList != null;

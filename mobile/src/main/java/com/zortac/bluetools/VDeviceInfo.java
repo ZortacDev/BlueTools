@@ -27,6 +27,10 @@ public class VDeviceInfo {
         return mMembers;
     }
 
+    public void toggleActive() {
+        mActive = !mActive;
+    }
+
     private static int lastVDeviceId = 0;
 
     @SuppressWarnings("unused")

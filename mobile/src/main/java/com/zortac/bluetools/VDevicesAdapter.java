@@ -14,7 +14,10 @@ import java.util.List;
 
 public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHolder> {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    private List<VDeviceInfo> mVDevices;
+    private Context mContext;
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView nameTextView;
         public Button activateButton;
@@ -35,8 +38,17 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
         @Override
         public void onClick(View v) {
             if (v.getId() == activateButton.getId()){
-                @SuppressWarnings("unused") int vDeviceId = getAdapterPosition();
-                //insert OnClick event for activateButton here
+                int vDeviceId = getAdapterPosition();
+                mVDevices.get(vDeviceId).toggleActive();
+                if(mVDevices.get(vDeviceId).isActive()) {
+                    activateButton.setText(R.string.deactivate_vdevice);
+                    activateButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(),
+                            R.color.md_red_500)));
+                } else {
+                    activateButton.setText(R.string.activate_vdevice);
+                    activateButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(),
+                            R.color.md_green_500)));
+                }
             } else if (v.getId() == configureButton.getId()) {
                 @SuppressWarnings("unused") int vDeviceId = getAdapterPosition();
                 //insert OnClick event for configureButton here
@@ -45,8 +57,7 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
 
     }
 
-    private List<VDeviceInfo> mVDevices;
-    private Context mContext;
+
 
     public VDevicesAdapter(Context context, List<VDeviceInfo> vdevices) {
         mVDevices = vdevices;
