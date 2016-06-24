@@ -35,10 +35,10 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
         @Override
         public void onClick(View v) {
             if (v.getId() == activateButton.getId()){
-                int vDeviceId = getAdapterPosition();
+                @SuppressWarnings("unused") int vDeviceId = getAdapterPosition();
                 //insert OnClick event for activateButton here
             } else if (v.getId() == configureButton.getId()) {
-                int vDeviceId = getAdapterPosition();
+                @SuppressWarnings("unused") int vDeviceId = getAdapterPosition();
                 //insert OnClick event for configureButton here
             }
         }
