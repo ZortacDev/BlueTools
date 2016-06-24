@@ -50,8 +50,7 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
 
         View vdevicesView = inflater.inflate(R.layout.item_vdevice, parent, false);
 
-        ViewHolder viewHolder = new ViewHolder(vdevicesView);
-        return viewHolder;
+        return new ViewHolder(vdevicesView);
     }
 
     @Override
