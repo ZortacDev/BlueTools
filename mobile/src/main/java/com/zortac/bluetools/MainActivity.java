@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
 
-        vdevices = VDeviceInfo.createVDeviceList(10);
+        vdevices = VDeviceInfo.createVDeviceList(30);
         VDevicesAdapter adapter = new VDevicesAdapter(this, vdevices);
         rvVDeviceList.setAdapter(adapter);
         rvVDeviceList.setLayoutManager(new LinearLayoutManager(rvVDeviceList.getContext()));

@@ -23,6 +23,6 @@
         android:src="@drawable/add"
         app:layout_anchor="@id/rvVDeviceList"
         app:layout_anchorGravity="bottom|right|end"
-        />
+        app:layout_behavior="com.zortac.bluetools.ScrollAwareFABBehavior" />
 
 </android.support.design.widget.CoordinatorLayout>
