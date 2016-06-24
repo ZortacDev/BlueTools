@@ -29,6 +29,7 @@ public class VDeviceInfo {
 
     private static int lastVDeviceId = 0;
 
+    @SuppressWarnings("unused")
     public static ArrayList<VDeviceInfo> createVDeviceList(int numVDevices) {
         ArrayList<VDeviceInfo> vDevices = new ArrayList<>();
 
