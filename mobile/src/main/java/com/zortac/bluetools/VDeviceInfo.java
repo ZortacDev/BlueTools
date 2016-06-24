@@ -30,7 +30,7 @@ public class VDeviceInfo {
     private static int lastVDeviceId = 0;
 
     public static ArrayList<VDeviceInfo> createVDeviceList(int numVDevices) {
-        ArrayList<VDeviceInfo> vDevices = new ArrayList<VDeviceInfo>();
+        ArrayList<VDeviceInfo> vDevices = new ArrayList<>();
 
         String [] dummyMembers = {"BTDevice 1", "BTDevice 2"};
 
@@ -41,5 +41,6 @@ public class VDeviceInfo {
 
         return vDevices;
     }
+
 
 }

@@ -6,12 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<VDeviceInfo> vdevices;
+    ArrayList<VDeviceInfo> vdevices = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +21,21 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
 
-        vdevices = VDeviceInfo.createVDeviceList(30);
         VDevicesAdapter adapter = new VDevicesAdapter(this, vdevices);
+
+        assert rvVDeviceList != null;
         rvVDeviceList.setAdapter(adapter);
         rvVDeviceList.setLayoutManager(new LinearLayoutManager(rvVDeviceList.getContext()));
 
+    }
+
+    public void addFabClicked(View v) {
+        String[] members = {"", ""};
+        vdevices.add(new VDeviceInfo("Device", true, members));
+        RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
+
+        assert rvVDeviceList != null;
+        rvVDeviceList.getAdapter().notifyDataSetChanged();
     }
 
 
@@ -42,11 +53,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
 
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
