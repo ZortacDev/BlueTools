@@ -2,6 +2,7 @@ package com.zortac.bluetools;
 
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class VDeviceInfo {
     private String mName;
@@ -34,7 +35,8 @@ public class VDeviceInfo {
         String [] dummyMembers = {"BTDevice 1", "BTDevice 2"};
 
         for (int i = 1; i <= numVDevices; i++) {
-            vDevices.add(new VDeviceInfo("Adapter " + ++lastVDeviceId, true, dummyMembers));
+            Random rnd = new Random();
+            vDevices.add(new VDeviceInfo("Adapter " + ++lastVDeviceId, rnd.nextBoolean(), dummyMembers));
         }
 
         return vDevices;
