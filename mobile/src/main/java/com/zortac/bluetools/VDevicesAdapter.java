@@ -61,14 +61,14 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
         TextView textView = viewHolder.nameTextView;
         textView.setText(vdevice.getName());
         Button configureButton = viewHolder.configureButton;
-        configureButton.setText("Configure");
+        configureButton.setText(R.string.configure_vdevice);
         Button activateButton = viewHolder.activateButton;
         if(vdevice.isActive()) {
-            activateButton.setText("Deactivate");
+            activateButton.setText(R.string.deactivate_vdevice);
             activateButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getResources()
                     .getColor(R.color.md_red_500)));
         } else {
-            activateButton.setText("Activate");
+            activateButton.setText(R.string.activate_vdevice);
             activateButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getResources()
                     .getColor(R.color.md_green_500)));
         }

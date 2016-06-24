@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name"> 藍色工具</string>
+    <string name="app_name">BlueTools</string>
     <string name="action_settings"> 設置</string>
     <string name="hello_world"> 你好，世界</string>
 </resources>

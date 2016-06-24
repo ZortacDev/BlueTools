@@ -2,4 +2,9 @@
     <string name="app_name">BlueTools</string>
     <string name="hello_world">Hello World</string>
     <string name="action_settings">Settings</string>
+
+    //VDevice Settings
+    <string name="configure_vdevice">Configure</string>
+    <string name="activate_vdevice">Activate</string>
+    <string name="deactivate_vdevice">Deactivate</string>
 </resources>
