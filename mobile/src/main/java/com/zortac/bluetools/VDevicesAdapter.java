@@ -2,6 +2,7 @@ package com.zortac.bluetools;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,12 +65,12 @@ public class VDevicesAdapter extends RecyclerView.Adapter<VDevicesAdapter.ViewHo
         Button activateButton = viewHolder.activateButton;
         if(vdevice.isActive()) {
             activateButton.setText(R.string.deactivate_vdevice);
-            activateButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getResources()
-                    .getColor(R.color.md_red_500)));
+            activateButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(),
+                    R.color.md_red_500)));
         } else {
             activateButton.setText(R.string.activate_vdevice);
-            activateButton.setBackgroundTintList(ColorStateList.valueOf(getContext().getResources()
-                    .getColor(R.color.md_green_500)));
+            activateButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(getContext(),
+                    R.color.md_red_500)));
         }
 
     }
