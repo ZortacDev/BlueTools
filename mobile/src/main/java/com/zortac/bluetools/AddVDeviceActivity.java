@@ -10,16 +10,22 @@ import android.view.View;
 public class AddVDeviceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addvdevice);
+
     }
 
     public void createDevice(View v) {
+
         Intent intent = getIntent();
+
         VDeviceInfo vdevice = new VDeviceInfo("", true, new String[] {""});
         intent.putExtra(MainActivity.VDEVICE_OBJECT, vdevice);
+
         setResult(RESULT_OK, intent);
         finish();
+
     }
 
     @Override
