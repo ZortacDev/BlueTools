@@ -1,10 +1,12 @@
 package com.zortac.bluetools;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class VDeviceInfo {
+@SuppressWarnings("serial")
+public class VDeviceInfo implements Serializable{
     private String mName;
     private boolean mActive;
     private String [] mMembers;

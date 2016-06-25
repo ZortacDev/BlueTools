@@ -1,5 +1,6 @@
 package com.zortac.bluetools;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    static final String VDEVICE_OBJECT = "VDeviceObject";
+
+    static final int ADD_VDEVICE_REQUEST = 1;
 
     ArrayList<VDeviceInfo> vdevices = new ArrayList<>();
 
@@ -31,14 +36,33 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addFabClicked(View v) {
+        Intent intent = new Intent(this, AddVDeviceActivity.class);
+        VDeviceInfo newVDevice = new VDeviceInfo("", true, new String[] {""});
+        intent.putExtra(VDEVICE_OBJECT, newVDevice);
+        startActivityForResult(intent, ADD_VDEVICE_REQUEST);
+
+        /*
         String[] members = {"", ""};
         vdevices.add(new VDeviceInfo("Device", new Random().nextBoolean(), members));
         RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
 
         assert rvVDeviceList != null;
-        rvVDeviceList.getAdapter().notifyDataSetChanged();
+        rvVDeviceList.getAdapter().notifyDataSetChanged();*/
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == ADD_VDEVICE_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                VDeviceInfo vdevice = (VDeviceInfo) data.getSerializableExtra("VDeviceReturned");
+                vdevices.add(vdevice);
+
+                RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
+
+                assert rvVDeviceList != null;
+                rvVDeviceList.getAdapter().notifyDataSetChanged();
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
