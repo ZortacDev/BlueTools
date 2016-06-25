@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
