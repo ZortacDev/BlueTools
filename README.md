@@ -1,5 +1,5 @@
 # BlueTools
-An application for Android devices allowing the use of multiple bluetooth speakers. Additionaly stereo and surround sound functions, aswell as EQ and mixing functions for each individual speaker are planned.
+An application for Android devices allowing the use of multiple bluetooth speakers. Additionaly stereo and surround sound functions, aswell as EQ and mixing functions for each individual speaker are planned. We are also trying to implement Bluetooth passthrough possibilities.
 # Android Wear
 We are planning to provide an Android Wear extension to the Application, functioning as a remote control for EQ and mixer.
 # iOS
