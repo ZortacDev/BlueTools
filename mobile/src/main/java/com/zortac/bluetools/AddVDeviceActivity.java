@@ -13,9 +13,8 @@ public class AddVDeviceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_addvdevice);
 
         Intent intent = getIntent();
-        VDeviceInfo vdevice = (VDeviceInfo) intent.getSerializableExtra(
-                MainActivity.VDEVICE_OBJECT);
-        intent.putExtra("VDeviceReturned", vdevice);
+        VDeviceInfo vdevice = new VDeviceInfo("", true, new String[] {""});
+        intent.putExtra(MainActivity.VDEVICE_OBJECT, vdevice);
         setResult(RESULT_OK, intent);
         finish();
     }

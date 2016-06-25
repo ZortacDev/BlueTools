@@ -37,30 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void addFabClicked(View v) {
         Intent intent = new Intent(this, AddVDeviceActivity.class);
-        VDeviceInfo newVDevice = new VDeviceInfo("", true, new String[] {""});
-        intent.putExtra(VDEVICE_OBJECT, newVDevice);
         startActivityForResult(intent, ADD_VDEVICE_REQUEST);
-
-        /*
-        String[] members = {"", ""};
-        vdevices.add(new VDeviceInfo("Device", new Random().nextBoolean(), members));
-        RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
-
-        assert rvVDeviceList != null;
-        rvVDeviceList.getAdapter().notifyDataSetChanged();*/
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == ADD_VDEVICE_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                VDeviceInfo vdevice = (VDeviceInfo) data.getSerializableExtra("VDeviceReturned");
-                vdevices.add(vdevice);
+        if(requestCode == ADD_VDEVICE_REQUEST && resultCode == RESULT_OK) {
+            VDeviceInfo vdevice = (VDeviceInfo) data.getSerializableExtra(VDEVICE_OBJECT);
+            vdevices.add(vdevice);
 
-                RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
+            RecyclerView rvVDeviceList = (RecyclerView) findViewById(R.id.rvVDeviceList);
 
-                assert rvVDeviceList != null;
-                rvVDeviceList.getAdapter().notifyDataSetChanged();
-            }
+            assert rvVDeviceList != null;
+            rvVDeviceList.getAdapter().notifyDataSetChanged();
         }
     }
 
